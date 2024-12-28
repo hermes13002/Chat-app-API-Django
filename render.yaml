@@ -7,10 +7,10 @@ databases:
 services:
   - type: web
     plan: free
-    name: avnadmin
+    name: chatapp_api_project
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "python -m gunicorn avnadmin.asgi:application -k uvicorn.workers.UvicornWorker"
+    startCommand: "python -m gunicorn achatapp_api_project.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
