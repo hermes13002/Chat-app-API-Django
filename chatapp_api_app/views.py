@@ -30,8 +30,8 @@ class LoginView(APIView):
                 {
                     "message": "Login successful",
                     "username": user.username,  # Access username from the user object
-                    "firstname": user.firstname,
-                    "lastname": user.lastname,
+                    "first_name": user.first_name,
+                    "last_name": user.last_name,
                     "email": user.email,
                     "phonenumber": user.phonenumber,
                 },
@@ -50,8 +50,8 @@ class ProfileView(APIView):
         return Response(
             {
                 "username": user.username,
-                "firstname": user.firstname,
-                "lastname": user.lastname,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
                 "email": user.email,
                 "phonenumber": user.phonenumber,
             },
