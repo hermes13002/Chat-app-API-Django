@@ -22,18 +22,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
         return user
 
-# # Serializer for user login
-# class LoginSerializer(serializers.Serializer):
-#     email = serializers.EmailField()  # Email field
-#     password = serializers.CharField(write_only=True)  # Password field, write-only
-
-#     # Method to validate user credentials
-#     def validate(self, data):
-#         user = authenticate(username=data['email'], password=data['password'])
-#         if not user:
-#             raise serializers.ValidationError("Invalid credentials")  # Raise error if credentials are invalid
-#         return {"user": user, "email": data['email']}
-
 
 # Serializer for user login
 class LoginSerializer(serializers.Serializer):
@@ -45,5 +33,5 @@ class LoginSerializer(serializers.Serializer):
         user = authenticate(username=data['username'], password=data['password'])
         if not user:
             raise serializers.ValidationError("Invalid credentials")  # Raise error if credentials are invalid
-        # return {"user": user}
-        return {"user": user, "email": data['email']}
+        return {"user": user}
+        # return {"user": user, "email": data['email']}

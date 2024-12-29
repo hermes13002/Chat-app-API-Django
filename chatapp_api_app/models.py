@@ -4,3 +4,5 @@ from django.db import models  # Importing Django's ORM models
 class User(AbstractUser):
     # Extending the AbstractUser model to include a unique email field
     email = models.EmailField(unique=True)
+    firstname = models.CharField()
+    lastname = models.CharField() 

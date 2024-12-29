@@ -21,22 +21,6 @@ class RegisterView(APIView):
 
 
 # # View for user login
-# class LoginView(APIView):
-#     def post(self, request):
-#         serializer = LoginSerializer(data=request.data)  # Deserialize the request data
-#         if serializer.is_valid():  # Check if the data is valid
-#             user = serializer.validated_data["user"]  # Get the user object from validated data
-#             return Response(
-#                 {
-#                     "message": "Login successful",
-#                     "username": user.username,  # Access username from the user object
-#                 },
-#                 status=status.HTTP_200_OK
-#             )  # Return success response
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)  # Return error response if data is invalid
-    
-
-
 class LoginView(APIView):
     def post(self, request):
         serializer = LoginSerializer(data=request.data)  # Deserialize the request data
