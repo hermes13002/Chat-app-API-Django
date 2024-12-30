@@ -75,6 +75,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'chatapp_api_project.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
